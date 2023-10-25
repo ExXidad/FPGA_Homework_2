@@ -133,6 +133,41 @@ end
 endmodule
 ```
 
+Map viewer:
+
+![](mp2.png)
+
 Результат симуляции:
 
 ![](tb2.png)
+
+
+# Мультиплексор N=5 с индексной адресацией
+
+Исследуемый модуль:
+
+```verilog
+module simtest (in, addr, out);
+// N = 5
+// addr in
+// 000  0
+// 001  1
+// 010  2
+// 011  3
+// 100  4
+input wire [4:0] in;
+input wire [2:0] addr;
+output wire out;
+assign out = in[addr];
+endmodule
+```
+
+Testbench аналогичен мультиплексору выше.
+
+Map viewer:
+
+![](mp3.png)
+
+Результат симуляции:
+
+![](tb3.png)
